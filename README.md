@@ -1,7 +1,7 @@
 # Coffee Shop Dataset
 ### Overview
 
-The Coffee Dataset is a comprehensive collection of data pertaining to café chain operations throughout April 2019. It includes detailed information on customer demographics, sales transactions, product inventory, and store details. Our exploratory data analysis (EDA) aims to reveal insights into Coffee performance, customer behavior, and product sales trends.
+The Coffee Dataset is a comprehensive collection of data pertaining to coffee chain operations throughout April 2019. It includes detailed information on customer demographics, sales transactions, product inventory, and store details. Our exploratory data analysis (EDA) aims to reveal insights into Coffee performance, customer behavior, and product sales trends.
 
 ### Dataset Files:
 1. **Customer:** Contains customer demographic information.
