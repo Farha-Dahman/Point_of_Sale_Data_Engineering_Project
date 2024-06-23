@@ -55,7 +55,7 @@ def store_data_to_mongodb(config_path):
         # Connect to MongoDB
         connection_string = os.getenv('MONGODB_CONNECTION_STRING')
         client = MongoClient(connection_string)
-        db = client['CoffeeShopDB']
+        db = client[os.getenv('DB_NAME')]
 
         # Process and store data
         for file_config in data_files:
