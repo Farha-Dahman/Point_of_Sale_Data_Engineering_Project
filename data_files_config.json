@@ -21,10 +21,6 @@
             "columns_to_drop": ["new_product_yn"]
         },
         {
-            "path": "data/generations.csv",
-            "columns_to_drop": []
-        },
-        {
             "path": "data/201904 sales reciepts.csv",
             "columns_to_drop": []
         }
