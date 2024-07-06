@@ -1,7 +1,8 @@
 # Coffee Shop Dataset
 ### Overview
 
-The Coffee Dataset is a comprehensive collection of data pertaining to coffee chain operations throughout April 2019. It includes detailed information on customer demographics, sales transactions, product inventory, and store details. Our exploratory data analysis (EDA) aims to reveal insights into Coffee performance, customer behavior, and product sales trends.
+The Coffee Dataset is a comprehensive collection of data pertaining to coffee chain operations throughout April 2019. It includes detailed information on customer demographics, sales transactions, product inventory, and store details. Our exploratory data analysis (EDA) aims to reveal insights into Coffee performance, customer behavior, and product sales trends.\
+You can find data [here](https://www.kaggle.com/datasets/ylchang/coffee-shop-sample-data-1113)
 
 ### Dataset Files:
 1. **Customer:** Contains customer demographic information.
@@ -10,7 +11,6 @@ The Coffee Dataset is a comprehensive collection of data pertaining to coffee ch
 4. **Sales Outlet (Stores):** Information about the different sales outlets, including location and postal code.
 5. **Sales Targets:** Sales targets set for different stores.
 6. **Pastry Inventory:** Details of the pastry inventory, including quantities sold and wasted.
-7. **Generations:** Details about generational segments of customers.
 
 ### Exploratory Data Analysis (EDA) Questions:
 **1. What are the total sales for each store on a daily basis?** 
@@ -64,6 +64,7 @@ The Coffee Dataset is a comprehensive collection of data pertaining to coffee ch
 \
 \
 **11. Which generation buys the most?**
+\
 **Purpose:** Identify which generational segment is the most lucrative for the business.
 \
 \
@@ -78,6 +79,7 @@ The Coffee Dataset is a comprehensive collection of data pertaining to coffee ch
 \
 \
 **14. What are the daily sales for each store throughout the week?**
+\
 **Purpose:** Analyze sales patterns throughout the week to identify busy and slow days.
 \
 \
@@ -111,5 +113,10 @@ The Coffee Dataset is a comprehensive collection of data pertaining to coffee ch
 **Purpose:** Analyze the popularity of different drink sizes to optimize menu offerings.
 
 
+### ETL Using Prefect for the Coffee Shop Dataset:
 
+ETL (Extract, Transform, Load) processes are crucial for managing and analyzing the Coffee Shop Dataset, covering customer demographics, sales transactions, and inventory details. Using Prefect, we define Python workflows to extract data from MongoDB, transform it to derive metrics like daily sales, and load it back for analysis. Prefect's scheduling capabilities allow us to automate these tasks daily at 12 am, ensuring up-to-date insights into our coffee shop operations. This scheduled execution maintains data integrity, supports timely decision-making, and enhances overall operational efficiency.
 
+### APIs for Accessing Analytical Insights:
+
+APIs (Application Programming Interfaces) are integral to our project, enabling seamless access to analytical insights derived from the Coffee Shop Dataset. Through FastAPI, we expose endpoints that allow stakeholders to interact with our data-driven insights programmatically. These APIs facilitate queries such as retrieving daily sales trends, comparing sales performance across different stores, and analyzing customer demographics. By leveraging FastAPI’s capabilities, we ensure that our APIs deliver efficient responses in JSON format, supporting integration with other applications or platforms. This approach enhances accessibility to critical business insights.
