@@ -1,5 +1,5 @@
 import pandas as pd
-from store_to_db import store_data_to_mongodb
+from DB.store_to_db import store_data_to_mongodb
 from sales_data_pipeline import etl_flow
 
 def main():

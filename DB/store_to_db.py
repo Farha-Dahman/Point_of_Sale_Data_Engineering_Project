@@ -1,7 +1,11 @@
 import os
 import json
 import pandas as pd
-from pymongo import MongoClient
+import os, sys
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(current_dir)
+sys.path.append(project_root)
+from DB.connect_db import get_mongo_connection
 
 def load_config(config_path):
     """
@@ -53,9 +57,7 @@ def store_data_to_mongodb(config_path):
         data_files = config['data_files']
 
         # Connect to MongoDB
-        connection_string = os.getenv('MONGODB_CONNECTION_STRING')
-        client = MongoClient(connection_string)
-        db = client[os.getenv('DB_NAME')]
+        client, db, sales_collection = get_mongo_connection()
 
         # Process and store data
         for file_config in data_files:

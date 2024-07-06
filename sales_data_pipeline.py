@@ -1,29 +1,16 @@
 import os
 import json
 import pandas as pd
-from pymongo import MongoClient
 from prefect import task, flow
-
-@task
-def get_mongo_connection():
-    try:
-        connection_string = os.getenv('MONGODB_CONNECTION_STRING')
-        client = MongoClient(connection_string)
-        return client
-    except Exception as e:
-        print(f"Error connecting to MongoDB: {e}")
-        return None
+from DB.connect_db import get_mongo_connection
 
 @task
 def extract_data():
     try:
-        client = get_mongo_connection()
-        db = client[os.getenv('DB_NAME')]
-        collection = db[os.getenv('COLLECTION_NAME')]
+        client, db, sales_collection = get_mongo_connection()
 
         # Fetch all sales data
-        sales_data = collection.find({})
-
+        sales_data = sales_collection.find({})
         df = pd.DataFrame(list(sales_data))
         df['transaction_date'] = pd.to_datetime(df['transaction_date'])
         client.close()
@@ -110,8 +97,7 @@ def transform_data(df, start_date_st, start_date_nd, comparison_type='daily'):
 @task
 def load_data(metrics):
     try:
-        client = get_mongo_connection()
-        db = client[os.getenv('DB_NAME')]
+        client, db = get_mongo_connection()
         collection = db['sales_metrics']
         collection.insert_one(metrics)
         client.close()
