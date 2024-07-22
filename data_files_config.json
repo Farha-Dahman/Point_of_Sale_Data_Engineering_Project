@@ -1,0 +1,28 @@
+{
+    "data_files": [
+        {
+            "path": "data/customer.csv",
+            "columns_to_drop": ["customer_since", "birth_year"]
+        },
+        {
+            "path": "data/pastry inventory.csv",
+            "columns_to_drop": ["start_of_day", "% waste"]
+        },
+        {
+            "path": "data/sales targets.csv",
+            "columns_to_drop": ["total_goal"]
+        },
+        {
+            "path": "data/sales_outlet.csv",
+            "columns_to_drop": ["store_square_feet", "store_longitude", "store_latitude", "Neighorhood"]
+        },
+        {
+            "path": "data/product.csv",
+            "columns_to_drop": ["new_product_yn"]
+        },
+        {
+            "path": "data/201904 sales reciepts.csv",
+            "columns_to_drop": []
+        }
+    ]
+}
